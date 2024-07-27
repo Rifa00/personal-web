@@ -202,16 +202,16 @@ img {
   background-image: -webkit-linear-gradient(right, var(--background), #006d77);
 }
 #header .logo img {
-  display: block;
+  display: none;
   height: 60px;
   margin: 5px 90%;
   object-fit: cover;
   transition: all 0.5s;
   cursor: pointer;
 }
-/* #header .logo img.scrolled {
+#header .logo img.scrolled {
   display: block;
-} */
+} 
 #header .logo img:hover {
   transform: translateX(50%);
 }
@@ -1112,12 +1112,4 @@ footer .icon {
     opacity: 1;
   }
 }
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-/* ahir animasi jumbotron */
+@keyfra
