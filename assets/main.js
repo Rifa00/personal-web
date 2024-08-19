@@ -1,4 +1,3 @@
-
 // script form contact
 
 const scriptURL =
@@ -68,20 +67,15 @@ if (tema === "light") {
 
 function lightMode() {
   document.body.classList.add("light");
-  togle.innerHTML = 'Dark Mode!';
+  togle.innerHTML = "Dark Mode!";
   localStorage.setItem("tema", "light");
-
-  document.querySelector('.location img').src = ['assets/img/locationB.jpg'];
 }
 function darkMode() {
   document.body.classList.remove("light");
-  togle.innerHTML = 'Light Mode!';
+  togle.innerHTML = "Light Mode!";
   localStorage.setItem("tema", "dark");
-
-  document.querySelector('.location img').src = ['assets/img/locationA.jpg'];
 }
 
-      
 const sections = document.querySelectorAll(".page-active");
 const navLinks = document.querySelectorAll("nav ul li a");
 
@@ -95,7 +89,6 @@ let hasRun = false;
 
 const portofolio = document.getElementById("portofolio");
 const photo = document.querySelectorAll(".photo");
-
 
 window.addEventListener("scroll", function () {
   // (nav) halaman aktif
@@ -116,11 +109,11 @@ window.addEventListener("scroll", function () {
       section.classList.remove("active");
     }
   });
-  
+
   let vheight = this.innerHeight;
   let theight = 60;
-  let point1 = (theight/100)*vheight;
-  let point2 = (theight/60)*vheight;
+  let point1 = (theight / 100) * vheight;
+  let point2 = (theight / 60) * vheight;
 
   let dScroll = this.window.scrollY;
   if (dScroll > home.offsetTop - point1) {
@@ -135,14 +128,13 @@ window.addEventListener("scroll", function () {
   if (dScroll > portofolio.offsetTop - point1) {
     photo.forEach(function (photo, i) {
       setTimeout(function () {
-        photo.classList.add("appe")
+        photo.classList.add("appe");
       }, i * 300);
     });
   }
-   // progress bar
-   
+  // progress bar
+
   if (!hasRun && dScroll > progres.offsetTop - point2) {
-  
     function moveMeter(id, target, speed) {
       let meter = document.getElementById(id);
       let value = 0;
@@ -176,19 +168,17 @@ window.addEventListener("scroll", function () {
 
 // write
 const txt = "Please click for more informaition...";
-      const write = document.getElementById("text");
-      let i = 0;
+const write = document.getElementById("text");
+let i = 0;
 
-      function typeWrite() {
-        if (i < txt.length) {
-          write.innerHTML += txt.charAt(i);
-          i++;
-          setTimeout(typeWrite, 100);
-        }
-      }
-      setTimeout(typeWrite, 2000);
-      
-
+function typeWrite() {
+  if (i < txt.length) {
+    write.innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWrite, 100);
+  }
+}
+setTimeout(typeWrite, 2000);
 
 // select portofolio
 function select(category) {
@@ -261,54 +251,53 @@ setInterval(nextPhoto, 18000);
 // inner  whidth <
 // animasi scroll
 
-const sticky = document.getElementById('header');
+const sticky = document.getElementById("header");
 const navbar = document.querySelector("#header nav");
 const landing = document.querySelector(".main-page");
 const logo = document.querySelector(".logo img");
-const mode = document.querySelector('.togle');
-const longText = document.querySelector('.long-text');
-const buttonText = document.querySelector('.read-more-btn');
+const mode = document.querySelector(".togle");
+const longText = document.querySelector(".long-text");
+const buttonText = document.querySelector(".read-more-btn");
 
-if(innerWidth<=991){
-  sticky.classList.add('sticky');
-  sticky.classList.remove('unsticky');
+if (innerWidth <= 991) {
+  sticky.classList.add("sticky");
+  sticky.classList.remove("unsticky");
   navbar.classList.add("scrolled");
   landing.classList.add("appear");
   logo.classList.add("scrolled");
-  mode.style = 'display:block; margin:auto;';
-  buttonText.addEventListener('click', function() {
-  if (longText.style.display =='none') {
-      longText.style.display = 'block';
-      buttonText.textContent = 'Less ?';
-  } else {
-      longText.style.display = 'none';
-      buttonText.textContent = 'In full ?';
-  }
-});
-
-}else{
-      // anim nav
-      window.addEventListener('scroll',function(){
-        let off = this.scrollY;
-        if(off >= 500){
-      sticky.classList.add('sticky');
-      sticky.classList.remove('unsticky');
+  mode.style = "display:block; margin:auto;";
+  buttonText.addEventListener("click", function () {
+    if (longText.style.display == "none") {
+      longText.style.display = "block";
+      buttonText.textContent = "Less ?";
+    } else {
+      longText.style.display = "none";
+      buttonText.textContent = "In full ?";
+    }
+  });
+} else {
+  // anim nav
+  window.addEventListener("scroll", function () {
+    let off = this.scrollY;
+    if (off >= 500) {
+      sticky.classList.add("sticky");
+      sticky.classList.remove("unsticky");
       navbar.classList.add("scrolled");
       landing.classList.add("appear");
       logo.classList.add("scrolled");
-      mode.style = 'display:none';
-      }else{
-      sticky.classList.remove('sticky');
-      sticky.classList.add('unsticky');
+      mode.style = "display:none";
+    } else {
+      sticky.classList.remove("sticky");
+      sticky.classList.add("unsticky");
       navbar.classList.remove("scrolled");
       landing.classList.remove("appear");
       logo.classList.remove("scrolled");
-      mode.style = 'display:block';
-      }
-      });
-      longText.style.display = 'block';
-      buttonText.style.display = 'none';
-      }
+      mode.style = "display:block";
+    }
+  });
+  longText.style.display = "block";
+  buttonText.style.display = "none";
+}
 
 // menu togle
 const menuTogle = document.getElementsByClassName("menu-togle")[0];
@@ -324,19 +313,18 @@ menu.addEventListener("click", function () {
   menu.classList.toggle("hidden");
 });
 
-
 // belum
 
-
 function updateAos() {
-  const elements = document.querySelectorAll('.my-element');
-  if (window.innerWidth <= 768) { // ukuran layar untuk mobile
-    elements.forEach(el => {
-      el.setAttribute('data-aos', 'fade-up');
+  const elements = document.querySelectorAll(".my-element");
+  if (window.innerWidth <= 768) {
+    // ukuran layar untuk mobile
+    elements.forEach((el) => {
+      el.setAttribute("data-aos", "fade-up");
     });
   } else {
-    elements.forEach(el => {
-      el.setAttribute('data-aos', 'fade-right');
+    elements.forEach((el) => {
+      el.setAttribute("data-aos", "fade-right");
     });
   }
   AOS.refresh(); // Refresh AOS untuk menerapkan perubahan
@@ -346,16 +334,13 @@ function updateAos() {
 updateAos();
 
 // Panggil fungsi setiap kali ukuran layar berubah
-window.addEventListener('resize', updateAos);
+window.addEventListener("resize", updateAos);
 
 // Inisialisasi AOS
 
-  AOS.init({
-    duration:500, // durasi animasi dalam milidetik
-    offset: 200, // jarak (px) sebelum animasi dimulai
-    once: true, // animasi hanya dijalankan sekali
-  });
-
-
-
-
+AOS.init({
+  duration: 500, // durasi animasi dalam milidetik
+  offset: 200, // jarak (px) sebelum animasi dimulai
+  once: true, // animasi hanya dijalankan sekali
+});
+        
