@@ -417,7 +417,7 @@ document.getElementById("form-data").addEventListener("submit", async (e) => {
   });
   console.log(await response.text());
   c();
-  fetch();
+  fetchData();
   reloadData();
   loading.classList.remove("show");
   console.log(items);
