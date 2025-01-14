@@ -513,7 +513,7 @@ async function h(id) {
     body: JSON.stringify({ action: "delete", id }),
   });
   console.log(await response.text());
-  fetch();
+  fetchData();
   reloadData();
   loading.classList.remove("show");
 }
